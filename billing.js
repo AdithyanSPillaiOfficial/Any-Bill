@@ -229,6 +229,7 @@ function saveBill() {
         return;
     }
 
+
     // Subtract billed items from inventory
     billItems.forEach((billItem) => {
         const item = billItem.item;
@@ -280,6 +281,13 @@ function saveBill() {
     // Open PDF in a new window
     const pdfDataUri = doc.output("datauristring");
     window.open(pdfDataUri);
+
+    document.getElementById("itemName").value = "";
+    document.getElementById("itemPrice").value = "";
+    document.getElementById("quantity").value = "";
+    document.getElementById("productId").value = "";
+    window.location.reload();
+    
 }
 
 document
